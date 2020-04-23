@@ -199,6 +199,9 @@ namespace netcore1.Migrations
                         .HasColumnType("character varying(50)")
                         .HasMaxLength(50);
 
+                    b.Property<int>("BankNum")
+                        .HasColumnType("integer");
+
                     b.Property<int>("RedMoney")
                         .HasColumnType("integer");
 
@@ -264,14 +267,14 @@ namespace netcore1.Migrations
                         .HasColumnType("character varying(50)")
                         .HasMaxLength(50);
 
-                    b.Property<int>("Status")
-                        .HasColumnType("integer");
+                    b.Property<bool>("Status")
+                        .HasColumnType("boolean");
 
                     b.Property<int>("UserId")
                         .HasColumnType("integer");
 
-                    b.Property<int>("revenue_and_expenditure")
-                        .HasColumnType("integer");
+                    b.Property<bool>("revenue_and_expenditure")
+                        .HasColumnType("boolean");
 
                     b.HasKey("Id");
 

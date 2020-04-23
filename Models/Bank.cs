@@ -10,6 +10,7 @@ namespace netcore1.Models
         public int Id{get;set;}
         [MaxLength(50)]
         public string BankName{get;set;}
+        public int BankNum {get;set;}
         public int RedMoney{get;set;}
         public int UserId{get;set;}
         [ForeignKey("UserId")]

@@ -4,7 +4,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 namespace netcore1.Migrations
 {
-    public partial class InitialCreate : Migration
+    public partial class init : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -87,6 +87,7 @@ namespace netcore1.Migrations
                     Id = table.Column<int>(nullable: false)
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
                     BankName = table.Column<string>(maxLength: 50, nullable: true),
+                    BankNum = table.Column<int>(nullable: false),
                     RedMoney = table.Column<int>(nullable: false),
                     UserId = table.Column<int>(nullable: false)
                 },
@@ -208,8 +209,8 @@ namespace netcore1.Migrations
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
                     Purpose = table.Column<string>(maxLength: 50, nullable: true),
                     Money = table.Column<int>(nullable: false),
-                    revenue_and_expenditure = table.Column<int>(nullable: false),
-                    Status = table.Column<int>(nullable: false),
+                    revenue_and_expenditure = table.Column<bool>(nullable: false),
+                    Status = table.Column<bool>(nullable: false),
                     CreateTime = table.Column<DateTime>(nullable: false),
                     Note = table.Column<string>(maxLength: 100, nullable: true),
                     UserId = table.Column<int>(nullable: false),

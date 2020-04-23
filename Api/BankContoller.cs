@@ -53,7 +53,7 @@ namespace my_new_app
 
             return Ok(model);
         }
-         [HttpPut("{id}")] 
+          [HttpPut("{id}")]
         public async Task<IActionResult> Update(int id, [FromBody] Bank model)
         {
             if (!ModelState.IsValid)
@@ -66,6 +66,7 @@ namespace my_new_app
             {
                 found.BankName = model.BankName;
                 found.RedMoney = model.RedMoney;
+                found.BankNum = model.BankNum;
                 await db.SaveChangesAsync();
 
                 return Ok(found);
