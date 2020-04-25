@@ -24,9 +24,10 @@ namespace netcore1.Controllers
         //     return Ok(list);
         // }
 
+        
           public async Task<IActionResult> GetAll(int ? userId = null)
         {
-             var query = db.Spendings.AsQueryable();
+            var query = db.Spendings.AsQueryable();
             if(userId.HasValue)
             {// tồn tại userId
                 userId = Convert.ToInt32(userId);
@@ -48,6 +49,10 @@ namespace netcore1.Controllers
          [HttpPost]
         public async Task<IActionResult> Create([FromBody] Spending model,int ? userId = null)
         {
+            // đầu vào là userId, 1 model kiểu Spending, 1 BankId
+            // xét revenue_and_expenditure để cộng trừ phù hợp
+            // create spending
+            // update lại banks
             if (!ModelState.IsValid)
             {
                 return BadRequest("Dữ liệu sai");
@@ -58,7 +63,21 @@ namespace netcore1.Controllers
             db.Spendings.Add(model);
             await db.SaveChangesAsync();
 
+            var account = db.Banks.Find(model.BankId);
+            if(model.revenue_and_expenditure){  
+                    
+                   account.RedMoney += model.Money;
+                   await db.SaveChangesAsync();
+
+            }
+            else{
+                  account.RedMoney -= model.Money;
+                 await db.SaveChangesAsync();
+            }
             return Ok(model);
+            // }
+            // return NotFound();
+           
         }
 
         [HttpPut("{id}")]
@@ -76,6 +95,8 @@ namespace netcore1.Controllers
                 found.Purpose = model.Purpose;
                 found.Money =model.Money;
                 found.CreateTime= model.CreateTime;
+                found.Status =model.Status;
+                found.revenue_and_expenditure = model.revenue_and_expenditure;
                 await db.SaveChangesAsync();
 
                 return Ok(found);

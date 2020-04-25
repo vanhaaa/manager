@@ -1,5 +1,5 @@
 {
-  "FilePath": "d:\\nhom22222-master\\nhom22222-master\\netcore1.csproj",
+  "FilePath": "c:\\GITHUB\\manager\\netcore1.csproj",
   "Configuration": {
     "ConfigurationName": "MVC-3.0",
     "LanguageVersion": "3.0",
@@ -20606,17 +20606,17 @@
         }
       }
     ],
-    "CSharpLanguageVersion": 800
+    "CSharpLanguageVersion": 703
   },
   "RootNamespace": "netcore1",
   "Documents": [
     {
-      "FilePath": "d:\\nhom22222-master\\nhom22222-master\\Pages\\Error.cshtml",
+      "FilePath": "c:\\GITHUB\\manager\\Pages\\Error.cshtml",
       "TargetPath": "Pages\\Error.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "d:\\nhom22222-master\\nhom22222-master\\Pages\\_ViewImports.cshtml",
+      "FilePath": "c:\\GITHUB\\manager\\Pages\\_ViewImports.cshtml",
       "TargetPath": "Pages\\_ViewImports.cshtml",
       "FileKind": "mvc"
     }

@@ -14,7 +14,7 @@ namespace netcore1.Models
         public int Money{get;set;}
         public bool revenue_and_expenditure{get;set;}
         // true là thu, false là chi
-         public bool Status {get;set;}
+        public bool Status {get;set;}
         public DateTime CreateTime{get;set;}
 
         [MaxLength(100)]

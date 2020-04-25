@@ -33,7 +33,7 @@ namespace netcore1
         {
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseNpgsql(Configuration.GetConnectionString("DefaultConnection")));
-                    //options => options.SetPostgresVersion(new Version(9, 6))));
+            //options => options.SetPostgresVersion(new Version(9, 6))));
 
 
             IdentityBuilder builder = services.AddIdentityCore<ApplicationUser>(options =>
@@ -96,7 +96,9 @@ namespace netcore1
                 });
 
             services.AddCors();
-
+            services.AddControllers().AddNewtonsoftJson(options =>
+    options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore
+);
             services.AddControllersWithViews();
 
             // In production, the React files will be served from this directory

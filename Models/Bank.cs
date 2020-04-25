@@ -15,7 +15,7 @@ namespace netcore1.Models
         public int UserId{get;set;}
         [ForeignKey("UserId")]
         public virtual ApplicationUser ApplicationUsers { get;set; }
-       public ICollection<Spending> Spendings{ get;set; }
+        public ICollection<Spending> Spendings{ get;set; }
       //  public List<Spending_Detail> OtherSpenDetails {set; get;}
     }
 }

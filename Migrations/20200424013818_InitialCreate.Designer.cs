@@ -10,8 +10,8 @@ using netcore1.Data;
 namespace netcore1.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20200423031225_init")]
-    partial class init
+    [Migration("20200424013818_InitialCreate")]
+    partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
